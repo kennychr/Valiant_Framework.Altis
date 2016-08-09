@@ -1,0 +1,142 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, PlayerRespawn">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-217.476837,-155.615280,-127.476837,-105.615280,0.000000,"Init"};
+item1[] = {"player_respawned",8,218,-92.186981,-155.633362,-2.186981,-105.633362,0.000000,"player" \n "respawned?"};
+item2[] = {"Run__Stock_Loado",2,250,31.422150,-157.172058,121.422157,-107.172058,0.000000,"Run " \n "Stock Loadout"};
+item3[] = {"done_",4,218,30.909264,-96.136841,120.909271,-46.136841,0.000000,"done?"};
+item4[] = {"pause_for__radio",2,250,31.422207,-29.459656,121.422234,20.540344,0.000000,"pause for " \n "radio ID"};
+item5[] = {"done_",4,218,30.909233,58.602905,120.909241,108.602913,0.000000,"done?"};
+item6[] = {"set_343",2,250,30.396389,133.486450,120.396408,183.486450,0.000000,"set 343"};
+item7[] = {"done_",4,218,30.909325,197.086212,120.909317,247.086212,0.000000,"done?"};
+item8[] = {"end_msg",1,4346,31.935089,250.940796,121.935120,300.940796,0.000000,"end msg"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,7};
+link7[] = {7,8};
+globals[] = {0.000000,0,0,0,0,640,480,1,10,6316128,1,-483.152985,483.152832,407.756409,-230.292603,1884,1244,1};
+window[] = {2,-1,-1,-1,-1,1081,52,1972,52,3,1902};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "PlayerRespawn";
+        class States
+        {
+                /*%FSM<STATE "Init">*/
+                class Init
+                {
+                        name = "Init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""RespawnInit Started"",""PLAIN"",2];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "player_respawned">*/
+                                class player_respawned
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Run__Stock_Loado";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Run__Stock_Loado">*/
+                class Run__Stock_Loado
+                {
+                        name = "Run__Stock_Loado";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""Running Loadout Exec on player"",""PLAIN"",2];" \n
+                         "_loadout = [] call AW_fnc_LoadoutExec;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "done_">*/
+                                class done_
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="pause_for__radio";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_loadout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "pause_for__radio">*/
+                class pause_for__radio
+                {
+                        name = "pause_for__radio";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_timeout = (time + 5);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "done_">*/
+                                class done_
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="set_343";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "set_343">*/
+                class set_343
+                {
+                        name = "set_343";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""Switching 343 to correct channel"",""PLAIN"",2];" \n
+                         "_343 = call AW_fnc_channel_set;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "done_">*/
+                                class done_
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="end_msg";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_343"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end_msg">*/
+                class end_msg
+                {
+                        name = "end_msg";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""Once more into the fray"",""PLAIN"",2];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="Init";
+        finalStates[] =
+        {
+                "end_msg",
+        };
+};
+/*%FSM</COMPILE>*/

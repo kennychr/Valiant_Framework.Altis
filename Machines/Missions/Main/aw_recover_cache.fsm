@@ -1,0 +1,216 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, aw_recCache">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,4346,374.245453,448.391022,464.245453,498.391083,0.000000,"init"};
+item1[] = {"Pos_Found___",4,218,373.308075,533.695129,463.308075,583.695129,0.000000,"Pos Found ? "};
+item2[] = {"Create_cache___salvaged",2,250,373.308014,621.811523,463.308044,671.811523,0.000000,"Create cache" \n "+" \n "salvaged trigger" \n ""};
+item3[] = {"wait_a_bit",4,218,372.370544,693.991882,462.370544,743.991821,0.000000,"wait a bit"};
+item4[] = {"define_time_out",2,250,371.433197,843.977295,461.433228,893.977295,0.000000,"define time out " \n "for check loop"};
+item5[] = {"time_to_check__",4,218,371.433167,938.655518,461.433167,988.655518,0.000000,"time to check ? "};
+item6[] = {"cache_recovered",2,250,372.370636,1068.955200,462.370667,1118.955200,0.000000,"cache recovered" \n "or" \n "dead?"};
+item7[] = {"no",8,218,528.917725,940.530273,618.917725,990.530273,0.000000,"no"};
+item8[] = {"",7,210,568.980286,864.039795,576.980225,872.039795,0.000000,""};
+item9[] = {"",7,210,570.855164,1089.017700,578.855103,1097.017700,0.000000,""};
+item10[] = {"dead",4,218,247.537613,1068.017700,337.537598,1118.017700,0.000000,"dead"};
+item11[] = {"recovered",4,218,371.433105,1152.384521,461.433105,1202.384521,0.000000,"recovered"};
+item12[] = {"end__fail",1,250,87.571297,1067.780273,177.571335,1117.780273,0.000000,"end " \n "fail"};
+item13[] = {"end_succses",1,250,370.733398,1242.598267,460.733429,1292.598267,0.000000,"end" \n "succses"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,9};
+link7[] = {6,10};
+link8[] = {6,11};
+link9[] = {7,8};
+link10[] = {8,4};
+link11[] = {9,7};
+link12[] = {10,12};
+link13[] = {11,13};
+globals[] = {0.000000,0,0,0,0,640,480,1,16,6316128,1,-148.886673,972.378662,1563.958984,291.010712,1131,1284,1};
+window[] = {2,-1,-1,-1,-1,1185,-2404,-484,156,3,1149};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "aw_recCache";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"//Find Pos" \n
+                         "_cache_pos = nil;" \n
+                         "_cache_pos = [""land2"",true] call AW_fnc_findSpace;" \n
+                         "_crate_salvaged = false;" \n
+                         "" \n
+                         "_unitCfg = AW_UNITS;" \n
+                         "" \n
+                         "" \n
+                         "diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:INIT""];" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Pos_Found___">*/
+                                class Pos_Found___
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Create_cache___salvaged";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNil ""_cache_pos"""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:Pos found""];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Create_cache___salvaged">*/
+                class Create_cache___salvaged
+                {
+                        name = "Create_cache___salvaged";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"_rDir = random 360;" \n
+                         "_rPos = [_cache_pos,150,_rDir] call BIS_fnc_relPos;" \n
+                         "wep_crate = createVehicle [""B_supplyCrate_F"",_rPos, [], 1, ""NONE"" ];" \n
+                         "//[wep_crate,true,[0,2,0],0] call ace_dragging_fnc_setDraggable;" \n
+                         "clearItemCargoGlobal wep_crate;" \n
+                         "[wep_crate,true] remoteExec [""ace_dragging_fnc_setDraggable"",0, ""ID_2""];" \n
+                         "_taskID = [""HUMINT reports a dropped weapon cache in this area, recover it immediatly!"",""Salvage Cache"",""testWords"",_cache_pos,""Search""] call AW_fnc_makeTask;" \n
+                         "_trg = createTrigger [""EmptyDetector"",getMarkerPos ""LZ""];" \n
+                         "_trg setTriggerArea [20,20,20,false];" \n
+                         "_trg setTriggerStatements [""wep_crate distance thistrigger < 10"",""_crate_salvaged = true"",""""];" \n
+                         "_timeout = (time + 5 + (random 10));" \n
+                         "" \n
+                         "" \n
+                         "diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:Cache created,trigger for dist to drop created,entering monitoring loop""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wait_a_bit">*/
+                                class wait_a_bit
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="define_time_out";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "define_time_out">*/
+                class define_time_out
+                {
+                        name = "define_time_out";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"_timeout = (time + 5 + (random 10));"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "time_to_check__">*/
+                                class time_to_check__
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="cache_recovered";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "cache_recovered">*/
+                class cache_recovered
+                {
+                        name = "cache_recovered";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "recovered">*/
+                                class recovered
+                                {
+                                        itemno = 11;
+                                        priority = 0.000000;
+                                        to="end_succses";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"_crate_salvaged"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:Cache recovered""];" \n
+                                         "remoteExec ["""", ""ID_2""];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "no">*/
+                                class no
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="define_time_out";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "dead">*/
+                                class dead
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="end__fail";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!alive _cache"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:Cache destroyed""];" \n
+                                         "remoteExec ["""", ""ID_2""];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end__fail">*/
+                class end__fail
+                {
+                        name = "end__fail";
+                        itemno = 12;
+                        init = /*%FSM<STATEINIT""">*/"[_taskID,""FAILED""] call BIS_fnc_taskSetState;" \n
+                         "MAINFSM setFSMVariable [""_main_complete"", 1];" \n
+                         "" \n
+                         "diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:FSM Exit,Task updated,MAINFSM var sent""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end_succses">*/
+                class end_succses
+                {
+                        name = "end_succses";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/"[_taskID,""SUCCEEDED""] call BIS_fnc_taskSetState;" \n
+                         "MAINFSM setFSMVariable [""_main_complete"", 1];" \n
+                         "deleteVehicle wep_crate;" \n
+                         "diag_log [""AW_MISSIONLOGGING--->  aw_recover_cache:FSM Exit,Task updated,MAINFSM var sent""];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "end__fail",
+                "end_succses",
+        };
+};
+/*%FSM</COMPILE>*/

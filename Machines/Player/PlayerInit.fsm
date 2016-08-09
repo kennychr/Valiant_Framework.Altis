@@ -1,0 +1,173 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, PlayerInit">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-225.683228,-162.795883,-135.683228,-112.795883,0.000000,"init"};
+item1[] = {"Player_Real_",8,218,-69.619354,-163.326874,20.380646,-113.326874,0.000000,"Player" \n "Real?"};
+item2[] = {"Loadout",2,250,48.860809,-162.813965,138.860825,-112.813957,0.000000,"Loadout"};
+item3[] = {"wait",4,218,159.647522,-163.326874,249.647522,-113.326874,0.000000,"wait"};
+item4[] = {"Setup_Names_and",2,4346,297.105103,-163.839752,387.105103,-113.839752,0.000000,"Setup Names" \n "and give radio"};
+item5[] = {"wait",4,218,408.404602,-163.839783,498.404602,-113.839783,0.000000,"wait"};
+item6[] = {"Set_343",2,250,544.974792,30.303604,634.974792,80.303604,0.000000,"Set 343"};
+item7[] = {"done_",4,218,544.866760,102.786621,634.866760,152.786621,0.000000,"done?"};
+item8[] = {"end_msg",1,250,546.000427,170.010162,636.000488,220.010132,0.000000,"end msg"};
+item9[] = {"wait_for_acre2_to",2,250,545.200867,-163.648712,635.200867,-113.648712,0.000000,"wait for acre2 to stabilize"};
+item10[] = {"wait_over___",4,218,545.200867,-64.971649,635.200867,-14.971649,0.000000,"wait over ? "};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {3,4};
+link4[] = {4,5};
+link5[] = {5,9};
+link6[] = {6,7};
+link7[] = {7,8};
+link8[] = {9,10};
+link9[] = {10,6};
+globals[] = {0.000000,0,0,0,0,640,480,1,14,6316128,1,-282.377716,886.852295,405.007813,-367.033325,1884,1284,1};
+window[] = {2,-1,-1,-1,-1,1055,-2534,-614,26,3,1902};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "PlayerInit";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""PlayerInit FSM started, please dont move"",""PLAIN"",2];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "Player_Real_">*/
+                                class Player_Real_
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="Loadout";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isNull player"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Loadout">*/
+                class Loadout
+                {
+                        name = "Loadout";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "cutText [""Running Loadout Exec on player"",""PLAIN"",2];" \n
+                         "//_loadout = []execVM ""Scripts\Loadouts\Woodland\LEX.sqf"";" \n
+                         "_timeout = (time + 2);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wait">*/
+                                class wait
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="Setup_Names_and";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"cutText [""ACRE2 Channels Loaded Locally"",""PLAIN"",2];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Setup_Names_and">*/
+                class Setup_Names_and
+                {
+                        name = "Setup_Names_and";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""ACRE2 Setup Running"",""PLAIN"",2];" \n
+                         "_acre = [player] execVM ""Scripts\ACRE2\Channels.sqf"";" \n
+                         "_timeout = (time + 5);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wait">*/
+                                class wait
+                                {
+                                        itemno = 5;
+                                        priority = 0.000000;
+                                        to="wait_for_acre2_to";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"cutText [""Loadout Exec Done! "",""PLAIN"",2];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Set_343">*/
+                class Set_343
+                {
+                        name = "Set_343";
+                        itemno = 6;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""Switching 343 to correct channel"",""PLAIN"",2];" \n
+                         ""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "done_">*/
+                                class done_
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="end_msg";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/""/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/"cutText [""343 switched"",""PLAIN"",2];"/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "end_msg">*/
+                class end_msg
+                {
+                        name = "end_msg";
+                        itemno = 8;
+                        init = /*%FSM<STATEINIT""">*/"cutText [""PlayerInit FSM ended, enjoy the fight =) "",""PLAIN"",2];"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "wait_for_acre2_to">*/
+                class wait_for_acre2_to
+                {
+                        name = "wait_for_acre2_to";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/"_timeout = (time + 5);"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "wait_over___">*/
+                                class wait_over___
+                                {
+                                        itemno = 10;
+                                        priority = 0.000000;
+                                        to="Set_343";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time >= _timeout"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "end_msg",
+        };
+};
+/*%FSM</COMPILE>*/
