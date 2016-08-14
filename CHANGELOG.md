@@ -1,4 +1,15 @@
 ### PTC-3 (HEAD -> master)
+>Sun, 14 Aug 2016 14:12:43 +0200
+
+>Author: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+>Commiter: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+Updated CHANGELOG.MD
+
+
+
+### PTC-3 (origin/master, origin/HEAD)
 >Sun, 14 Aug 2016 14:09:20 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)
