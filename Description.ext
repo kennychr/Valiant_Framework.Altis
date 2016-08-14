@@ -144,7 +144,27 @@ class enemy
 	#include "Config\enemy.hpp"
 };
 
+class Extended_Killed_Eventhandlers {
 
+ 	class RHS_AH1Z_wd_GS {
+        CUP_WaterVehicles_LHD_killed = " [(_this select 0),60] spawn AW_fnc_vSpawn_lhd";
+		};
+	class rhsusf_CH53E_USMC {
+				CUP_WaterVehicles_LHD_killed = " [(_this select 0),60] spawn AW_fnc_vSpawn_lhd";
+		};
+	class rhsusf_m1025_w_s_m2 {
+				CUP_WaterVehicles_LHD_killed = " [(_this select 0),30] spawn AW_fnc_vSpawn_lhd";
+		};
+	class rhsusf_m1025_w_s_Mk19 {
+				CUP_WaterVehicles_LHD_killed = " [(_this select 0),30] spawn AW_fnc_vSpawn_lhd";
+		};
+	class RHS_M2A3_wd {
+				CUP_WaterVehicles_LHD_killed = " [(_this select 0),30] spawn AW_fnc_vSpawn_lhd";
+		};
+	class Burnes_MK10_1 {
+				CUP_WaterVehicles_LHD_killed = " [(_this select 0),30] spawn AW_fnc_vSpawn_lhd";
+		};
+};
 
 class Extended_PreInit_EventHandlers {
 	UCD_pre_init = "call compile preProcessFileLineNumbers 'scripts\unitCaching\init.sqf'";

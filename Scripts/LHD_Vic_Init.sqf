@@ -30,7 +30,7 @@
 */
 //---------Helicopters_RHS
 [LHD1,"rhsusf_CH53E_USMC","fd_cargo_pos_18"] call CUP_fnc_spawnVehicleCargo;
-[LHD1,"rhsusf_CH53E_USMC","fd_cargo_pos_14"] call CUP_fnc_spawnVehicleCargo;
+[LHD1,"rhsusf_CH53E_USMC","fd_cargo_pos_15"] call CUP_fnc_spawnVehicleCargo;
 [LHD1,"RHS_AH1Z_wd_GS","fd_cargo_pos_9"] call CUP_fnc_spawnVehicleCargo;
 [LHD1,"RHS_AH1Z_wd_GS","fd_cargo_pos_10"] call CUP_fnc_spawnVehicleCargo;
 //---------Vehicles_RHS

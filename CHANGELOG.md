@@ -1,4 +1,19 @@
 ### PTC-3 (HEAD -> master)
+>Sun, 14 Aug 2016 14:49:33 +0200
+
+>Author: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+>Commiter: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+Added vSpawn for LHD Vehicles, changed layout of one of the airfields.
+Moved the markers of the rSpawn and supply boxes on the airfields.
+Removed recover cache mission as its not viable and quite boring imho.
+Changed spawnpos of one of the CH-53 to bypass the fireworks that
+sometimes happen
+
+
+
+### PTC-3 (origin/master, origin/HEAD)
 >Sun, 14 Aug 2016 14:14:23 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)
@@ -9,7 +24,7 @@ Added old changelog
 
 
 
-### PTC-3 (origin/master, origin/HEAD)
+### PTC-3
 >Sun, 14 Aug 2016 14:12:43 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)

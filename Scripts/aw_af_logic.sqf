@@ -51,7 +51,7 @@ _w_af_task = ["Capture the W airfield","Capture Airfield","testWords",getPos tri
 //--------- Spawn enemies(todo: use ai_spawn.sqf)
 
 //Main AF
-_main_af_units = [EAST, 7, getPos trigger_main_airfield_1, 400] call AW_fnc_spawnEnemy;
+_main_af_units = [EAST, 14, getPos trigger_main_airfield_1, 500] call AW_fnc_spawnEnemy;
 [_main_af_units, [["patrol", getPos trigger_main_airfield_1, 200]]] call AW_fnc_setBehaviour;
 //NE AF
 _ne_af_units = [EAST, 7, getPos trigger_ne_airfield_1, 400] call AW_fnc_spawnEnemy;
@@ -83,9 +83,7 @@ while {true} do {
 
                 };
                 case "no": {
-                    LZ = createMarker ["LZ",getMarkerPos "pickup_main_af"];
-                    "LZ" setMarkerType "hd_pickup";
-                    "LZ" setMarkerText "PickUp\DropOff";
+
                     MAINFSM = []execFSM "Machines\Core\Main.fsm"; publicVariable "MAINFSM";
                     AW_Sidemissions = "SideMissions" call BIS_fnc_getParamValue; publicVariable "AW_Sidemissions";//Get param for if sidemission shold run
                     if (AW_Sidemissions == 1) then {
@@ -119,9 +117,6 @@ while {true} do {
 
                 };
                 case "no": {
-                    LZ = createMarker ["LZ",getMarkerPos "pickup_w_af"];
-                    "LZ" setMarkerType "hd_pickup";
-                    "LZ" setMarkerText "PickUp\DropOff";
                     MAINFSM = []execFSM "Machines\Core\Main.fsm"; publicVariable "MAINFSM";
                     AW_Sidemissions = "SideMissions" call BIS_fnc_getParamValue; publicVariable "AW_Sidemissions";//Get param for if sidemission shold run
                     if (AW_Sidemissions == 1) then {
@@ -155,9 +150,7 @@ while {true} do {
 
                 };
                 case "no": {
-                    LZ = createMarker ["LZ",getMarkerPos "pickup_ne_af"];
-                    "LZ" setMarkerType "hd_pickup";
-                    "LZ" setMarkerText "PickUp\DropOff";
+
                     MAINFSM = []execFSM "Machines\Core\Main.fsm"; publicVariable "MAINFSM";
                     AW_Sidemissions = "SideMissions" call BIS_fnc_getParamValue; publicVariable "AW_Sidemissions";//Get param for if sidemission shold run
                     if (AW_Sidemissions == 1) then {

@@ -8,7 +8,6 @@ class Missions{
 		"aw_captureTown",
 		"aw_downloadUAV",
 		"aw_officerRescue",
-		"aw_recover_cache",
 		"aw_defuseMinefield"
 		};
 	};
