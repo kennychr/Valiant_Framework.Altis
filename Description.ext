@@ -1,10 +1,7 @@
 //-------------------------On Load
 
-//author = PFC.Christiansen;					// Visible when loading mission
 onLoadName = "Valiant";						// Visible when loading mission
 OnLoadMission = " ... Join us on TeamSpeak at ts.ahoyworld.net:9987";
-loadScreen = "";
-overviewPicture = "";
 
 
 

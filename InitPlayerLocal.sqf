@@ -11,12 +11,12 @@
  */
 
 enableSaving [false,false];//Disable SP save
-<<<<<<< HEAD
+
 // ---------------- Player Scripts
 [] execVM "scripts\QS_icons.sqf";//Map Icons
 [] call AW_fnc_diary;//Write briefing/changelog etc. into mission
 [] execVM "Scripts\Loadouts\Woodland\LEX.sqf";//Loadout exec
-=======
+
 
 
 // ---------------- Player Scripts
@@ -26,7 +26,7 @@ enableSaving [false,false];//Disable SP save
 [] execVM 'Scripts\Loadouts\Woodland\LEX.sqf';//Loadout exec
 //----------- Add respawn EH
 //player addMPEventHandler ["MPRespawn", {[]execFSM "Machines\Player\PlayerRespawn.fsm"}];// Circumvent BIS bug of initPlayerLocal and OnPlayerRespawn firing on mission start
->>>>>>> origin/PTC-2
+
 
 // -------------- Headless Client
 [] spawn {

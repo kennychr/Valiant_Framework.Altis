@@ -10,3 +10,4 @@
 |	Last modified: 30. January 2015 By: Pfc.Christiansen
 |	Made for AhoyWorld.
 */
+[] execVM 'Scripts\Loadouts\Woodland\LEX.sqf';//Loadout exec

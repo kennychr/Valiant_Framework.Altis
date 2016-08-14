@@ -52,13 +52,9 @@ class AW {
 		file = "Functions\Misc";
 		class missionName 					{};
 		class diary									{};
-<<<<<<< HEAD
 		class fpsmon								{};
 		class randomPosTrigger			{};
-=======
 		class vSpawn_lhd						{};
-		class fpsmon								{};
->>>>>>> origin/PTC-2
 
 	};
 

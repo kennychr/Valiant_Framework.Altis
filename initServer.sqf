@@ -31,7 +31,7 @@ skipTime definedTime;
 [] call AW_fnc_taskInit;
 //---------- Map center fnc !!Do not ever remove!!
 [] call AW_fnc_mapCenter;
-<<<<<<< HEAD
+
 //----------::::::::::::::::: Map Radius, This can\must be tweaked when porting over to other maps if not you will experince missions spawning of the visible map, easiest is to spawn center-ish on map and then using shift-click to measure map's radius and then subtracting 500-1000m and input the value.
 mapRadius = 9400;publicVariable "mapRadius";
 //---------- Setup vars for airfields
@@ -39,8 +39,7 @@ main_airfield_captured = false;
 w_airfield_captured = false;
 se_airfield_captured = false;
 ne_airfield_captured = false;
-=======
->>>>>>> origin/PTC-2
+
 
 
 
@@ -49,21 +48,21 @@ ne_airfield_captured = false;
 //---------- Get Param for units used
 AW_UNITS = "OPFORUnits" call BIS_fnc_getParamValue; publicVariable "AW_UNITS";
 
-<<<<<<< HEAD
+
 //---------- Start airfield logic
 [] execVM "Scripts\aw_af_logic.sqf";
-
 //---------- Start AI Skill setter
-[] execVM "Scripts\AI\Ai_Skill_Init.sqf";
-=======
+//[] execVM "Scripts\AI\Ai_Skill_Init.sqf";ASR Test
+//---------- Setup LHD Vics
+[] execVM "Scripts\LHD_Vic_Init.sqf";
+
 //---------- Run mission engines
-MAINFSM = []execFSM "Machines\Core\Main.fsm"; publicVariable "MAINFSM";				// Main Mission Selector
+//MAINFSM = []execFSM "Machines\Core\Main.fsm"; publicVariable "MAINFSM";				// Main Mission Selector
 AW_Sidemissions = "SideMissions" call BIS_fnc_getParamValue; publicVariable "AW_Sidemissions";//Get param for if sidemission shold run
 if (AW_Sidemissions == 1) then {
-SIDEFSM = []execFSM "Machines\Core\Side.fsm"; publicVariable "SIDEFSM";
+//SIDEFSM = []execFSM "Machines\Core\Side.fsm"; publicVariable "SIDEFSM";
 };
 
->>>>>>> origin/PTC-2
 
 //---------------------------------- Params Check
 AW_Arsenal = "Arsenal" call BIS_fnc_getParamValue; publicVariable "AW_Arsenal";
