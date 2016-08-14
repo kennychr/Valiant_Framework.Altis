@@ -59,10 +59,7 @@ AW_fnc_Loadout_PLTCO = {
   player linkItem "ItemCompass";
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
-<<<<<<< HEAD
   player addItemToVest "ACRE_PRC343";
-=======
->>>>>>> origin/PTC-2
   player addItemToVest "ACRE_PRC152";
   player addItemToBackpack "ACRE_PRC117F";
 };
@@ -110,10 +107,7 @@ AW_fnc_Loadout_FAC = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-<<<<<<< HEAD
   player addItemToVest "ACRE_PRC343";
-=======
->>>>>>> origin/PTC-2
   player addItemToVest "ACRE_PRC152";
   player addItemToBackpack "ACRE_PRC117F";
 };
@@ -168,10 +162,9 @@ AW_fnc_Loadout_SL = {
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
   player addItemToVest "ACRE_PRC152";
-<<<<<<< HEAD
-    player addItemToVest "ACRE_PRC343";
-=======
->>>>>>> origin/PTC-2
+  player addItemToVest "ACRE_PRC343";
+
+
 
 };
 //--------Teamleader
@@ -221,10 +214,8 @@ AW_fnc_Loadout_TL = {
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
   player addItemToVest "ACRE_PRC152";
-<<<<<<< HEAD
-    player addItemToVest "ACRE_PRC343";
-=======
->>>>>>> origin/PTC-2
+  player addItemToVest "ACRE_PRC343";
+
 
 };
 //--------Rifleman
@@ -493,11 +484,9 @@ AW_fnc_Loadout_ME = {
   player linkItem "ItemWatch";
   player linkItem "ItemRadioAcreFlagged";
   player linkItem "ItemGPS";
-<<<<<<< HEAD
-    player addItemToVest "ACRE_PRC343";
-=======
   player addItemToVest "ACRE_PRC343";
->>>>>>> origin/PTC-2
+  player addItemToVest "ACRE_PRC343";
+
 
 };
 
@@ -1163,12 +1152,9 @@ AW_fnc_Loadout_Hel_P = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-<<<<<<< HEAD
   player addItemToVest "ACRE_PRC343";
   player addBackpack "rhsusf_assault_eagleaiii_coy";
-=======
   player addItemToVest "ACRE_PRC152";
->>>>>>> origin/PTC-2
   player addItemToBackpack "ACRE_PRC117F";
 };
 //--------Helicopter Co-Pilot\Crew
@@ -1206,11 +1192,9 @@ AW_fnc_Loadout_Hel_C = {
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
   player addItemToVest "ACRE_PRC343";
-<<<<<<< HEAD
   player addBackpack "rhsusf_assault_eagleaiii_coy";
   player addItemToBackpack "ACRE_PRC117F";
-=======
->>>>>>> origin/PTC-2
+
 
 };
 //--------Vehicle Crew Commander

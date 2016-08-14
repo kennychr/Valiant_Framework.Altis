@@ -15,7 +15,8 @@ class Missions{
 	class Side {
 	    Side_Array[] = {
 		"aw_destroyRadiotower",
-		"aw_destroyRadar"
+		"aw_destroyRadar",
+		"aw_destroyFuelsilo"
 		};
 	};
 
