@@ -1,4 +1,15 @@
-### PTC-3 (HEAD -> ground)
+### PTC-3 (HEAD -> master)
+>Sun, 14 Aug 2016 14:09:20 +0200
+
+>Author: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+>Commiter: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+Updated CHANGELOG.MD as it broke in the merge
+
+
+
+### PTC-3 (origin/ground, ground)
 >Sun, 14 Aug 2016 13:57:54 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)
@@ -9,7 +20,7 @@ Some additions and tweaks
 
 
 
-### New init of repo, pre-release candidate code (origin/master, origin/ground, origin/HEAD, master)
+### New init of repo, pre-release candidate code
 >Tue, 9 Aug 2016 22:28:19 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)
