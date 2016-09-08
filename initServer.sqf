@@ -25,7 +25,7 @@ for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 
 //---------- Time Of Day
 definedTime = (paramsArray select 1);
-skipTime definedTime;
+//skipTime definedTime;
 
 //---------- Call task sys setup
 [] call AW_fnc_taskInit;
@@ -41,8 +41,9 @@ se_airfield_captured = false;
 ne_airfield_captured = false;
 
 
-
-
+//---------- Check for TFAR\ACRE for radio box.
+ACRE = isClass(configFile >> "cfgPatches" >> "acre_main"); publicVariable "ACRE";
+TFAR = isClass(configFile >> "cfgPatches" >> "task_force_radio"); publicVariable "TFAR";
 //---------- Add radios to box
 [RADIO_box] call AW_fnc_radioBox;
 //---------- Get Param for units used

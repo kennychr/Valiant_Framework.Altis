@@ -1,6 +1,6 @@
 // Called by : [this, "platoon_leader_1"] call AW_fnc_presets;
 if(isDedicated) exitWith {};
-
+if(!ACRE) exitWith {};
 
 private["_unit", "_localUnitType"];
 _unit = _this select 0;
@@ -67,6 +67,7 @@ waitUntil {time >= _timeout};
 	waitUntil { ([] call acre_api_fnc_isInitialized) };
 
 	switch _localUnitType do {
+
 		case 'ftl_leader_1': { [ (["ACRE_PRC343"] call acre_api_fnc_getRadioByType), 1] call acre_api_fnc_setRadioChannel; };
 		case 'ftl_leader_2': { [ (["ACRE_PRC343"] call acre_api_fnc_getRadioByType), 2] call acre_api_fnc_setRadioChannel; };
 		case 'ftl_leader_3': { [ (["ACRE_PRC343"] call acre_api_fnc_getRadioByType), 3] call acre_api_fnc_setRadioChannel; };
@@ -140,5 +141,6 @@ waitUntil {time >= _timeout};
 			[ (["ACRE_PRC152"] call acre_api_fnc_getRadioByType), 7] call acre_api_fnc_setRadioChannel;
 			[ (["ACRE_PRC117F"] call acre_api_fnc_getRadioByType), 7] call acre_api_fnc_setRadioChannel;
 			};
+
 	};
 };

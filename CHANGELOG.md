@@ -1,4 +1,17 @@
-### PTC-3 (HEAD -> master)
+### Pre-V1.0 (HEAD -> master)
+>Thu, 8 Sep 2016 21:58:40 +0200
+
+>Author: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+>Commiter: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+Basic cleanup, modified\removed some missions, added 1 new mission with
+added fnc for it. removed radios from loadouts, they are now spawned in
+a box as i have added a TFAR\ACRE check
+
+
+
+### PTC-3 (origin/master, origin/HEAD)
 >Sun, 14 Aug 2016 14:49:33 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)
@@ -13,7 +26,7 @@ sometimes happen
 
 
 
-### PTC-3 (origin/master, origin/HEAD)
+### PTC-3
 >Sun, 14 Aug 2016 14:14:23 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)

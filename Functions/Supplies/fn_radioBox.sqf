@@ -17,9 +17,17 @@
 
  params ["_box"];
 
-
- _box additemcargoGlobal ["ACRE_PRC343",40];
- _box additemcargoGlobal ["ACRE_PRC152",40];
- _box additemcargoGlobal ["ACRE_PRC117f",40];
- _box additemcargoGlobal ["ACRE_PRC148",40];
- _box additemcargoGlobal ["ACRE_PRC77",40];
+if (ACRE) then {
+  _box additemcargoGlobal ["ACRE_PRC343",40];
+  _box additemcargoGlobal ["ACRE_PRC152",40];
+  _box additemcargoGlobal ["ACRE_PRC117f",40];
+  _box additemcargoGlobal ["ACRE_PRC148",40];
+  _box additemcargoGlobal ["ACRE_PRC77",40];
+};
+if (TFAR) then {
+  _box additemcargoGlobal ["",40];
+  _box additemcargoGlobal ["",40];
+  _box additemcargoGlobal ["",40];
+  _box additemcargoGlobal ["",40];
+  _box additemcargoGlobal ["",40];
+};

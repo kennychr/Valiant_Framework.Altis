@@ -38,7 +38,7 @@ _mrk_ne_af = createMarker ["_mrk_ne_af",getPos trigger_ne_airfield_1];
 "_mrk_ne_af" setMarkerDir 0;
 "_mrk_ne_af" setMarkerBrush "DIAGGRID";
 "_mrk_ne_af" setMarkerColor "ColorOPFOR";
-_ne_af_task = ["Capture the NE airfield","Capture Airfield","testWords",getPos trigger_ne_airfield_1,"Search"] call AW_fnc_makeTask;
+_ne_af_task = ["Capture the SE airfield","Capture Airfield","testWords",getPos trigger_ne_airfield_1,"Search"] call AW_fnc_makeTask;
 
 //W AF
 _mrk_w_af = createMarker ["_mrk_w_af",getPos trigger_w_airfield_1];

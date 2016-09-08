@@ -55,6 +55,8 @@ class AW {
 		class fpsmon								{};
 		class randomPosTrigger			{};
 		class vSpawn_lhd						{};
+		class cachePlacer						{};
+		class vehicleSpawner				{};
 
 	};
 
