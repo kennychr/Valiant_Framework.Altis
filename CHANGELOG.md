@@ -1,4 +1,16 @@
-### Pre-V1.0 (HEAD -> master)
+### pre V1.0 (HEAD -> master)
+>Sun, 18 Sep 2016 14:26:39 +0200
+
+>Author: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+>Commiter: Kenny Christiansen (kenny.christiansen@gmail.com)
+
+Changed some settings, moved some stuff. Made it both acre and tfar
+compatible
+
+
+
+### Pre-V1.0 (origin/master, origin/HEAD)
 >Thu, 8 Sep 2016 21:58:40 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)
@@ -11,7 +23,7 @@ a box as i have added a TFAR\ACRE check
 
 
 
-### PTC-3 (origin/master, origin/HEAD)
+### PTC-3
 >Sun, 14 Aug 2016 14:49:33 +0200
 
 >Author: Kenny Christiansen (kenny.christiansen@gmail.com)

@@ -59,7 +59,7 @@ AW_fnc_Loadout_PLTCO = {
   player linkItem "ItemCompass";
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
   //player addItemToVest "ACRE_PRC152";
 //  player addItemToBackpack "ACRE_PRC117F";
 };
@@ -107,7 +107,7 @@ AW_fnc_Loadout_FAC = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
   //player addItemToVest "ACRE_PRC152";
   //player addItemToBackpack "ACRE_PRC117F";
 };
@@ -162,7 +162,7 @@ AW_fnc_Loadout_SL = {
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
   //player addItemToVest "ACRE_PRC152";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 
 
@@ -214,7 +214,7 @@ AW_fnc_Loadout_TL = {
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
 //  player addItemToVest "ACRE_PRC152";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 
 };
@@ -256,7 +256,7 @@ AW_fnc_Loadout_RF = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 
@@ -303,7 +303,7 @@ AW_fnc_Loadout_GRD = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------AutoRifleman
@@ -345,7 +345,7 @@ AW_fnc_Loadout_AR = {
   player addWeapon "Rangefinder";
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------Assistant Autorifleman
@@ -389,7 +389,7 @@ AW_fnc_Loadout_AAR = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 AW_fnc_Loadout_MRK = {
@@ -430,7 +430,7 @@ AW_fnc_Loadout_MRK = {
   player linkItem "ItemWatch";
   player linkItem "ItemRadioAcreFlagged";
   player linkItem "ItemGPS";
-  //  player addItemToVest "ACRE_PRC343";
+    player addItemToVest "ACRE_PRC343";
 };
 
 //--------Medic
@@ -484,7 +484,7 @@ AW_fnc_Loadout_ME = {
   player linkItem "ItemWatch";
   player linkItem "ItemRadioAcreFlagged";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
   //player addItemToVest "ACRE_PRC343";
 
 
@@ -536,7 +536,7 @@ AW_fnc_Loadout_MMG_T = {
   player linkItem "ItemCompass";
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 //  player addItemToVest "ACRE_PRC152";
 
 
@@ -580,7 +580,7 @@ AW_fnc_Loadout_MMG_A = {
   player addWeapon "Rangefinder";
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------Medium Machine Gun Gunner
@@ -620,7 +620,7 @@ AW_fnc_Loadout_MMG_G = {
   player addWeapon "Rangefinder";
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------Medium Anti Tank TL
@@ -750,7 +750,7 @@ AW_fnc_Loadout_FSG_T = {
   player linkItem "ItemCompass";
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 //  player addItemToVest "ACRE_PRC152";
 };
 //--------Fire Support Group Soldier
@@ -791,7 +791,7 @@ AW_fnc_Loadout_FSG_S = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------Medical Evacuation Unit TL
@@ -976,7 +976,7 @@ AW_fnc_Loadout_REP_TL = {
   player linkItem "ItemCompass";
   player linkItem "ItemWatch";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
   //player addItemToVest "ACRE_PRC152";
 };
 
@@ -1022,7 +1022,7 @@ AW_fnc_Loadout_REP_RS = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 
@@ -1068,7 +1068,7 @@ AW_fnc_Loadout_REP_DS = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 
@@ -1114,7 +1114,7 @@ AW_fnc_Loadout_REP_EN = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------Helicopter Pilot
@@ -1152,7 +1152,7 @@ AW_fnc_Loadout_Hel_P = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
   player addBackpack "rhsusf_assault_eagleaiii_coy";
 //  player addItemToVest "ACRE_PRC152";
 //  player addItemToBackpack "ACRE_PRC117F";
@@ -1193,6 +1193,7 @@ AW_fnc_Loadout_Hel_C = {
   player linkItem "ItemGPS";
   player addItemToVest "ACRE_PRC343";
   player addBackpack "rhsusf_assault_eagleaiii_coy";
+  player addItemToVest "ACRE_PRC343";
 //  player addItemToBackpack "ACRE_PRC117F";
 
 
@@ -1235,6 +1236,7 @@ AW_fnc_Loadout_Vic_C = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
+  player addItemToVest "ACRE_PRC343";
   //player addItemToVest "ACRE_PRC152";
 //  player addItemToBackpack "ACRE_PRC117F";
 };
@@ -1276,7 +1278,7 @@ AW_fnc_Loadout_Vic_G = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-  //player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 //--------Vehicle Crew Driver
@@ -1317,7 +1319,7 @@ AW_fnc_Loadout_Vic_D = {
   player linkItem "ItemMap";
   player linkItem "ItemCompass";
   player linkItem "ItemGPS";
-//  player addItemToVest "ACRE_PRC343";
+  player addItemToVest "ACRE_PRC343";
 
 };
 AW_fnc_loadoutRandomization = {

@@ -1,4 +1,8 @@
 // Called by : [this, "platoon_leader_1"] call AW_fnc_presets;
+
+
+
+
 if(isDedicated) exitWith {};
 if(!ACRE) exitWith {};
 
@@ -31,6 +35,8 @@ getRadioByType = {
 	if(isNil "_ret") exitWith { nil };
 	_ret
 };
+/*
+----------TESTING MODULE-----------
 
 ["ACRE_PRC152", "default", "example1"] call acre_api_fnc_copyPreset;
 ["ACRE_PRC117F", "default", "example1"] call acre_api_fnc_copyPreset;
@@ -53,11 +59,11 @@ getRadioByType = {
 
 ["ACRE_PRC152", "example1"] call acre_api_fnc_setPreset;
 ["ACRE_PRC117F", "example1"] call acre_api_fnc_setPreset;
-
+*/
 _this spawn {
 _timeout = (time + 5);
 waitUntil {time >= _timeout};
-
+if(!ACRE) exitWith {};
 	_unit = _this select 0;
 	_localUnitType = _this select 1;
 

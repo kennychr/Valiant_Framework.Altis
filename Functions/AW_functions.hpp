@@ -24,10 +24,6 @@ class AW {
 
 	};
 
-	class ACRE {
-		file = "Functions\ACRE";
-		class presets									{};
-	};
 
 	class Map	{
 		file = "Functions\Map";
@@ -84,6 +80,13 @@ class AW {
 		class addDead	{};
 		class collectGarbage {};
 	};
+	class Radios {
+		file = "Functions\Radios";
+		class acre_setup 	{};
+		class presets 		{};
+		class radio_init	{};
+		class tfar_setup	{};
+	}
 
 };
 class QS {

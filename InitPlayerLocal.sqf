@@ -20,7 +20,7 @@ enableSaving [false,false];//Disable SP save
 
 
 // ---------------- Player Scripts
-[] execVM "scripts\QS_icons.sqf";//Map Icons
+//[] execVM "scripts\QS_icons.sqf";//Map Icons
 [] call AW_fnc_diary;//Write briefing/changelog etc. into mission
 [] execVM 'Functions\VA\fn_VA02.sqf';//Limited Arsenal Per Class
 [] execVM 'Scripts\Loadouts\Woodland\LEX.sqf';//Loadout exec

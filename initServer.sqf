@@ -12,7 +12,10 @@
 //---------- Disable Saving
 enableSaving [false,false];//Disable SP save
 
-//---------- Start DAC on server
+//---------- Check for TFAR\ACRE for radio box and setup according to mod
+ACRE = isClass(configFile >> "cfgPatches" >> "acre_main"); publicVariable "ACRE";
+TFAR = isClass(configFile >> "cfgPatches" >> "task_force_radio"); publicVariable "TFAR";
+[] call AW_fnc_radio_init;
 //---------- Params Logging
 for [ {_i = 0}, {_i < count(paramsArray)}, {_i = _i + 1} ] do {
 	call compile format
@@ -41,9 +44,7 @@ se_airfield_captured = false;
 ne_airfield_captured = false;
 
 
-//---------- Check for TFAR\ACRE for radio box.
-ACRE = isClass(configFile >> "cfgPatches" >> "acre_main"); publicVariable "ACRE";
-TFAR = isClass(configFile >> "cfgPatches" >> "task_force_radio"); publicVariable "TFAR";
+
 //---------- Add radios to box
 [RADIO_box] call AW_fnc_radioBox;
 //---------- Get Param for units used

@@ -41,8 +41,5 @@
 [LHD1,"rhsusf_m1025_w_s_Mk19","veh_cargo_pos_13"] call CUP_fnc_spawnVehicleCargo;
 [LHD1,"rhsusf_m1025_w_s_Mk19","veh_cargo_pos_18"] call CUP_fnc_spawnVehicleCargo;
 
-[LHD1,"RHS_M2A3_wd","veh_cargo_pos_6"] call CUP_fnc_spawnVehicleCargo;
-[LHD1,"RHS_M2A3_wd","veh_cargo_pos_11"] call CUP_fnc_spawnVehicleCargo;
-[LHD1,"RHS_M2A3_wd","veh_cargo_pos_16"] call CUP_fnc_spawnVehicleCargo;
 
 //-Landing Craft
